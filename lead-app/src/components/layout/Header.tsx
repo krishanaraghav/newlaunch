@@ -70,7 +70,7 @@ const Header = ({ generalWhatsAppLink, promoVisible, onDismissPromo }: HeaderPro
             src={PROJECT_CONFIG.heroImage}
             alt={`${PROJECT_CONFIG.projectName} visual`}
             loading="lazy"
-            style={{ maxWidth: '65%', height: 'auto' }}
+            style={{ maxWidth: '100%', height: 'auto' }}
           />
         </div>
       </div>

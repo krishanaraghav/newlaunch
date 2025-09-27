@@ -8,7 +8,7 @@ const Footer = () => (
       <a href="#location">Location</a>
       <a href="#contact">Contact</a>
     </nav>
-    <span>
+    <span className='copyright-text'>
       &copy; <span id="footer-year">{new Date().getFullYear()}</span>
       {PROJECT_CONFIG.companyName}. All rights reserved.
     </span>

@@ -80,7 +80,8 @@ export const PROJECT_CONFIG = {
     },
   ],
   contact: {
-    email: 'realtyavyukta@gmail.com',
+    email: 'gopal.singh07@gmail.com',
+    ccEmails: ['techiekrishana@gmail.com'],
     phone: '9289329903',
     whatsapp: '9289329903',
   },

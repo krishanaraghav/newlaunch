@@ -5,6 +5,7 @@ import { PROJECT_CONFIG } from './config/project'
 import { useFooterYear } from './hooks/useFooterYear'
 import { usePromoBanner } from './hooks/usePromoBanner'
 import { defaultWhatsAppMessage, useWhatsAppLink } from './utils/whatsapp'
+import { submitLead } from './utils/lead'
 import Header from './components/layout/Header'
 import HighlightsSection from './components/sections/HighlightsSection'
 import AmenitiesSection from './components/sections/AmenitiesSection'
@@ -12,6 +13,7 @@ import LocationSection from './components/sections/LocationSection'
 import ContactSection from './components/sections/ContactSection'
 import FloatingWhatsapp from './components/common/FloatingWhatsapp'
 import Footer from './components/layout/Footer'
+import AttentionNudge from './components/common/AttentionNudge'
 
 function App() {
   const [formSubmitted, setFormSubmitted] = useState(false)
@@ -34,16 +36,27 @@ function App() {
     return `https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=4&data=${encodeURIComponent(target)}`
   }, [])
 
-  const handleFormSubmit: FormEventHandler<HTMLFormElement> = (event) => {
+  const handleFormSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
     const name = (formData.get('name') as string) || 'Prospective Buyer'
-    const phone = (formData.get('phone') as string) || PROJECT_CONFIG.contact.whatsapp
+    const phoneRaw = (formData.get('phone') as string) || PROJECT_CONFIG.contact.whatsapp
     const email = (formData.get('email') as string) || null
-    const preference = (formData.get('preference') as string) || 'Morning'
 
-    const contactNote = email ? `Email: ${email}` : 'Email: Not provided'
-    const message = `Hello ${PROJECT_CONFIG.companyName},\nI am ${name} and would like a call back regarding ${PROJECT_CONFIG.projectName}.\nPhone: ${phone}\nPreferred time: ${preference}\n${contactNote}`
+    const phone = phoneRaw.replace(/\s+/g, '')
+    const emailLine = email ? `\nEmail: ${email}` : ''
+    const message = `Hello ${PROJECT_CONFIG.companyName},\nI just shared my details for ${PROJECT_CONFIG.projectName}.\nName: ${name}\nPhone: ${phone}${emailLine}`
+
+    try {
+      await submitLead({
+        name,
+        phone,
+        email,
+        message,
+      })
+    } catch (error) {
+      console.error('Lead submission failed', error)
+    }
 
     setThankYouMessage(message)
     setWhatsAppMessage(message)
@@ -53,6 +66,7 @@ function App() {
 
   return (
     <div className="page">
+      <AttentionNudge generalWhatsAppLink={generalWhatsAppLink} />
       <Header
         generalWhatsAppLink={generalWhatsAppLink}
         promoVisible={promoVisible}
