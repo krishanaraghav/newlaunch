@@ -1,5 +1,5 @@
 import { amenityIcons } from '../../config/icons'
-import { PROJECT_CONFIG, highlightImages } from '../../config/project'
+import { PROJECT_CONFIG, highlightImages, amenityCTA } from '../../config/project'
 
 const AmenitiesSection = () => (
   <section id="amenities">
@@ -8,8 +8,8 @@ const AmenitiesSection = () => (
       <a href="#contact">Plan a site visit</a>
     </div>
     <div className="grid-cards">
-      {PROJECT_CONFIG.amenities.slice(0, 4).map((amenity, index) => {
-        const media = index < 0 ? highlightImages[index] : undefined
+      {PROJECT_CONFIG.amenities.map((amenity, index) => {
+        const media = index < 2 ? highlightImages[index] : undefined
         return (
           <div
             key={`amenity-${amenity}`}
@@ -19,7 +19,7 @@ const AmenitiesSection = () => (
             <i className={`fas ${amenityIcons[index % amenityIcons.length]}`} aria-hidden="true" />
             <h3>{amenity}</h3>
             <p>Designed to deliver a premium community lifestyle with thoughtfully curated spaces for every resident.</p>
-            <span>Included in membership</span>
+            <span>{amenityCTA}</span>
           </div>
         )
       })}

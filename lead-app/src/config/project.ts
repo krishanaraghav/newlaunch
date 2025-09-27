@@ -25,6 +25,17 @@ export const highlightImages = [
   highlightImg1,
 ]
 
+export const highlightCTA = [
+  'Explore details',
+  'Discover connectivity',
+  'View residence specs',
+  'See growth insights',
+  'Experience the lifestyle',
+  'Understand the advantage',
+]
+
+export const amenityCTA = 'Included in membership'
+
 export const PROJECT_CONFIG = {
   companyName: 'Ganga Realty',
   partnerName: 'Ganga Realty',

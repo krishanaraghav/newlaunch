@@ -22,6 +22,7 @@ body {
   font-family: 'Inter', sans-serif;
   color: var(--text);
   background: var(--surface);
+  line-height: 1.6;
 }
 
 a {
@@ -33,6 +34,12 @@ a {
   display: none !important;
 }
 
+.container {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
 .page {
   display: flex;
   flex-direction: column;
@@ -42,70 +49,71 @@ a {
 header {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 65%, var(--accent-cyan) 100%);
   color: #fff;
-  padding-bottom: 64px;
+  padding: 2.5rem 0 4rem;
 }
 
 .top-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 7vw;
+  gap: 1.5rem;
+  padding: 0;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
   font-weight: 700;
   font-size: 1.05rem;
 }
 
 .brand i {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--accent-cyan);
 }
 
 nav ul {
-  display: flex;
-  gap: 28px;
+  display: none;
+  gap: 1.75rem;
   list-style: none;
   font-size: 0.95rem;
 }
 
 .hero {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 48px;
-  padding: 40px 7vw 0;
+  gap: 2rem;
+  padding: 2.5rem 0 0;
   align-items: center;
 }
 
 .hero-copy h1 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
   line-height: 1.15;
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 }
 
 .hero-copy p {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.05rem;
-  line-height: 1.8;
-  margin-bottom: 24px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
 .hero-actions {
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .promo-banner {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 22px;
-  padding: 16px 20px;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1rem 1.25rem;
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.14);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -124,10 +132,10 @@ nav ul {
 .promo-badge {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   font-weight: 600;
   font-size: 0.85rem;
-  padding: 6px 12px;
+  padding: 0.4rem 0.75rem;
   border-radius: 999px;
   background: linear-gradient(120deg, #f97316, #fb7185);
   color: #fff;
@@ -135,10 +143,8 @@ nav ul {
 }
 
 .promo-content {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 6px;
+  display: grid;
+  gap: 0.5rem;
   color: rgba(255, 255, 255, 0.92);
 }
 
@@ -154,15 +160,15 @@ nav ul {
 
 .promo-actions {
   display: flex;
-  align-items: center;
-  gap: 12px;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .promo-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 10px 18px;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.9rem;
@@ -203,18 +209,17 @@ nav ul {
 
 .hero-meta {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
-  margin-top: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
 }
 
 .meta-card {
   background: rgba(11, 31, 78, 0.35);
   border-radius: 16px;
-  padding: 18px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+  padding: 1.1rem;
+  display: grid;
+  gap: 0.4rem;
 }
 
 .meta-card span:first-child {
@@ -231,22 +236,22 @@ nav ul {
 
 main {
   flex: 1;
-  padding: 50px 7vw 80px;
+  padding: 2.5rem 0 4rem;
   display: grid;
-  gap: 60px;
+  gap: 4rem;
   background: var(--surface);
 }
 
 .section-heading {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 28px;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
 }
 
 .section-heading h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
+  font-size: 1.9rem;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
@@ -259,25 +264,23 @@ main {
 
 .grid-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 .card {
   background: var(--surface-alt);
   border-radius: 18px;
-  padding: 24px;
+  padding: 1.5rem;
   border: 1px solid var(--border);
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  min-height: 200px;
+  gap: 1rem;
+  min-height: 220px;
 }
 
 .card.media-card {
   position: relative;
-  border: none;
-  min-height: 240px;
   color: #fff;
   overflow: hidden;
   background: none;
@@ -333,13 +336,12 @@ main {
 
 .callback-form {
   display: grid;
-  gap: 12px;
+  gap: 0.75rem;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 18px;
-  padding: 20px 24px;
+  padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(6px);
-  max-width: 420px;
 }
 
 .callback-form .form-title {
@@ -350,7 +352,7 @@ main {
 
 .callback-form .form-field {
   display: grid;
-  gap: 6px;
+  gap: 0.4rem;
 }
 
 .callback-form label {
@@ -362,7 +364,7 @@ main {
 .callback-form input,
 .callback-form select {
   width: 100%;
-  padding: 12px 14px;
+  padding: 0.75rem 0.85rem;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.35);
   background: rgba(255, 255, 255, 0.98);
@@ -373,7 +375,7 @@ main {
 }
 
 .callback-form input:focus,
-.callback-form select:focus {
+callback-form select:focus {
   border-color: rgba(14, 165, 233, 0.7);
   box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.25);
 }
@@ -381,6 +383,7 @@ main {
 .callback-form button {
   justify-content: center;
   width: 100%;
+  min-height: 44px;
 }
 
 .callback-form .form-note {
@@ -391,15 +394,15 @@ main {
 
 .callback-container {
   display: grid;
-  gap: 18px;
+  gap: 1.5rem;
 }
 
 .callback-thanks {
   display: grid;
-  gap: 12px;
+  gap: 0.75rem;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 18px;
-  padding: 24px;
+  padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(6px);
   color: rgba(255, 255, 255, 0.95);
@@ -425,21 +428,41 @@ main {
 .contact-buttons {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 1rem;
   flex-wrap: wrap;
 }
+
 .contact-content {
   display: grid;
-  gap: 24px;
+  gap: 1.5rem;
 }
+
+.contact-copy {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.contact-copy h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.contact-copy p {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 38ch;
+}
+
 .contact-sidebar {
   display: grid;
-  gap: 18px;
+  gap: 1.25rem;
 }
+
 .contact-actions {
   display: grid;
-  gap: 18px;
+  gap: 1rem;
 }
+
 .contact-buttons {
   margin-bottom: 0;
 }
@@ -447,16 +470,16 @@ main {
 .qr-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 16px;
+  gap: 1rem;
 }
 
 .qr-card {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 18px;
-  padding: 18px;
+  padding: 1.2rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   display: grid;
-  gap: 10px;
+  gap: 0.65rem;
   justify-items: center;
   text-align: center;
 }
@@ -472,63 +495,25 @@ main {
   justify-content: center;
 }
 
-.qr-card .qr-target canvas,
-.qr-card .qr-target img {
+.qr-card img {
   width: 100%;
-  height: 100%;
-}
-
-.qr-card span {
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.4;
+  height: auto;
 }
 
 .cta-banner {
   background: linear-gradient(120deg, var(--accent-blue) 0%, var(--accent-cyan) 100%);
   color: #fff;
   border-radius: 22px;
-  padding: 40px 48px;
+  padding: 2rem 1.5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 32px;
-  align-items: center;
-}
-
-.cta-banner h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  font-weight: 600;
-}
-
-.cta-banner p {
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.7;
-}
-
-footer {
-  background: #0b1220;
-  color: rgba(255, 255, 255, 0.75);
-  padding: 40px 7vw;
-  display: grid;
-  gap: 18px;
-}
-
-footer nav {
-  display: flex;
-  gap: 26px;
-  flex-wrap: wrap;
-}
-
-footer span {
-  font-size: 0.9rem;
+  gap: 1.5rem;
 }
 
 .cta {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 22px;
+  gap: 0.6rem;
+  padding: 0.8rem 1.4rem;
   border-radius: 999px;
   font-weight: 600;
   font-size: 0.95rem;
@@ -559,6 +544,24 @@ footer span {
   border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
+footer {
+  background: #0b1220;
+  color: rgba(255, 255, 255, 0.75);
+  margin-top: auto;
+}
+
+footer .container {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2.5rem 1.5rem;
+}
+
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
 .floating-whatsapp {
   position: fixed;
   bottom: 24px;
@@ -585,81 +588,119 @@ footer span {
   box-shadow: 0 22px 36px rgba(15, 118, 110, 0.35);
 }
 
-@media (max-width: 920px) {
-  nav ul {
-    display: none;
+@media (max-width: 640px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-copy {
+    width: 100%;
   }
 
   .hero-actions {
-    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 0.75rem;
   }
 
-  .hero {
-    padding-top: 24px;
+  .hero-actions .cta {
+    width: 50%;
+    justify-content: center;
+  }
+
+  .hero-media {
+    width: 100%;
+  }
+
+  .hero-media img {
+    max-width: 100%;
+    width: 100%;
   }
 
   .promo-banner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .promo-actions {
     width: 100%;
-    justify-content: space-between;
-  }
-}
-
-@media (max-width: 640px) {
-  .top-bar {
-    padding: 18px 20px;
   }
 
-  .hero {
-    padding: 32px 20px 0;
+  .hero-meta {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
   }
 
-  main {
-    padding: 40px 20px 60px;
-  }
-
-  footer {
-    padding: 36px 20px;
-  }
-
-  .callback-form {
-    max-width: 100%;
-    padding: 18px 20px;
+  .meta-card {
+    width: 33.33%;
+    padding: 0.75rem;
   }
 
   .promo-actions {
     flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
   }
 
-  .promo-link {
+  .promo-link,
+  .contact-buttons .cta {
     width: 100%;
     justify-content: center;
   }
 
-  .promo-close {
-    align-self: flex-end;
-  }
-  .contact-content {
-    grid-template-columns: minmax(0, 1fr);
-  }
   .contact-buttons {
     justify-content: center;
   }
-  .qr-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+@media (min-width: 640px) {
+  .hero-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
-@media (min-width: 920px) {
+
+@media (min-width: 768px) {
+  nav ul {
+    display: flex;
+  }
+
+  .hero {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 3rem;
+  }
+
+  .promo-banner {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .promo-actions {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .cta-banner {
+    padding: 3rem;
+    gap: 2.5rem;
+  }
+
   .contact-content {
-    grid-template-columns: minmax(0, 1fr) 320px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-copy {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1180px) {
+  .hero {
+    grid-template-columns: minmax(75%, 1fr) minmax(25%, 1fr);
+  }
+
+  .contact-content {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) 320px;
     align-items: start;
+  }
+
+  .contact-copy {
+    grid-column: auto;
+    text-align: left;
+    align-self: center;
   }
 }
 

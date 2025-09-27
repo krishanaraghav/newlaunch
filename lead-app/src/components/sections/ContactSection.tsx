@@ -23,14 +23,14 @@ const ContactSection = ({
   callbackQrUrl,
 }: ContactSectionProps) => (
   <section className="cta-banner" id="contact">
-    <div>
-      <h2>Ready to secure your address?</h2>
-      <p>
-        Connect with our dedicated relationship managers for pricing, inventory, and curated walkthroughs of
-        {PROJECT_CONFIG.projectName}.
-      </p>
-    </div>
     <div className="contact-content">
+      <div className="contact-copy">
+        <h2>Ready to secure your address?</h2>
+        <p>
+          Connect with our dedicated relationship managers for pricing, inventory, and curated walkthroughs of
+          {PROJECT_CONFIG.projectName}.
+        </p>
+      </div>
       <div className="callback-container">
         {!formSubmitted ? <CallbackForm onSubmit={onSubmit} /> : <ThankYouPanel thankYouWhatsAppLink={thankYouWhatsAppLink} />}
       </div>

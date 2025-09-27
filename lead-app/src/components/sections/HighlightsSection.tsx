@@ -1,5 +1,5 @@
 import { highlightIcons } from '../../config/icons'
-import { PROJECT_CONFIG, highlightLabels, highlightImages } from '../../config/project'
+import { PROJECT_CONFIG, highlightLabels, highlightImages, highlightCTA } from '../../config/project'
 
 const HighlightsSection = () => (
   <section id="highlights">
@@ -8,21 +8,20 @@ const HighlightsSection = () => (
       <a href="#contact">View brochure</a>
     </div>
     <div className="grid-cards">
-      {PROJECT_CONFIG.highlights.slice(0, 4).map((item, index) => {
+      {PROJECT_CONFIG.highlights.map((item, index) => {
         const media = highlightImages[index]
         const icon = highlightIcons[index] || 'fa-star'
         const label = highlightLabels[index] || `Signature Highlight ${index + 1}`
         return (
           <div
             key={`highlight-${index}`}
-           // className={media ? 'card media-card' : 'card'}
-           className="card"
-           // style={media ? ({ '--media': `url(${media})` } as React.CSSProperties) : undefined}
+            className={media ? 'card media-card' : 'card'}
+            style={media ? ({ '--media': `url(${media})` } as React.CSSProperties) : undefined}
           >
             <i className={`fas ${icon}`} aria-hidden="true" />
             <h3>{label}</h3>
             <p>{item}</p>
-            <span>Explore details</span>
+            <span>{highlightCTA[index] || 'Learn more'}</span>
           </div>
         )
       })}

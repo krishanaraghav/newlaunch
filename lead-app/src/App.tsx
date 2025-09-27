@@ -59,7 +59,7 @@ function App() {
         onDismissPromo={dismissPromo}
       />
 
-      <main>
+      <main className="container">
         <HighlightsSection />
         <AmenitiesSection />
         <LocationSection />
