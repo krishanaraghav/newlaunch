@@ -7,6 +7,60 @@ import highlightImg5 from '../assets/rps.jpg'
 
 export const SECTION_ORDER = ['highlights', 'amenities', 'location', 'contact'] as const
 
+// Layout Types
+export type LayoutType = 'hero-cta' | 'story-flow' | 'comparison-info' | 'lead-magnet'
+
+// Active Layout Configuration
+export const ACTIVE_LAYOUT: LayoutType = 'lead-magnet' // Change this to switch layouts
+
+// Layout Configurations
+export const LAYOUT_CONFIG = {
+  'hero-cta': {
+    name: 'Hero CTA',
+    description: 'Direct & quick lead capture',
+    showCountdown: false,
+    showLockedContent: false,
+    showFullDetails: true,
+    ctaPrimary: 'Get Details on WhatsApp',
+    ctaSecondary: 'Download Brochure',
+  },
+  'story-flow': {
+    name: 'Story Flow',
+    description: 'Luxury launches with storytelling',
+    showCountdown: true,
+    showLockedContent: true,
+    showFullDetails: false,
+    ctaPrimary: 'Unlock Pricing',
+    ctaSecondary: null,
+  },
+  'comparison-info': {
+    name: 'Comparison Info',
+    description: 'Info-heavy buyers',
+    showCountdown: false,
+    showLockedContent: false,
+    showFullDetails: true,
+    ctaPrimary: 'Get Details on WhatsApp',
+    ctaSecondary: null,
+  },
+  'lead-magnet': {
+    name: 'Lead Magnet',
+    description: 'High-ticket, qualified leads',
+    showCountdown: false,
+    showLockedContent: true,
+    showFullDetails: false,
+    ctaPrimary: 'Unlock Details',
+    ctaSecondary: null,
+  },
+} as const
+
+// Countdown Configuration (for Story Flow layout)
+export const COUNTDOWN_CONFIG = {
+  enabled: true,
+  targetDate: new Date('2025-12-31T23:59:59'), // Set your launch date
+  title: 'Coming Soon',
+  subtitle: 'Launch starts in',
+}
+
 export const highlightLabels = [
   'Launch Celebration',
   'Hyper-Connected Location',

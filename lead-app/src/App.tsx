@@ -1,19 +1,15 @@
 import type { FormEventHandler } from 'react'
 import { useMemo, useState } from 'react'
 import './styles/main.scss'
-import { PROJECT_CONFIG } from './config/project'
+import { PROJECT_CONFIG, ACTIVE_LAYOUT } from './config/project'
 import { useFooterYear } from './hooks/useFooterYear'
 import { usePromoBanner } from './hooks/usePromoBanner'
 import { defaultWhatsAppMessage, useWhatsAppLink } from './utils/whatsapp'
 import { submitLead } from './utils/lead'
-import Header from './components/layout/Header'
-import HighlightsSection from './components/sections/HighlightsSection'
-import AmenitiesSection from './components/sections/AmenitiesSection'
-import LocationSection from './components/sections/LocationSection'
-import ContactSection from './components/sections/ContactSection'
-import FloatingWhatsapp from './components/common/FloatingWhatsapp'
-import Footer from './components/layout/Footer'
-import AttentionNudge from './components/common/AttentionNudge'
+import HeroCTALayout from './components/layouts/HeroCTALayout'
+import StoryFlowLayout from './components/layouts/StoryFlowLayout'
+import ComparisonInfoLayout from './components/layouts/ComparisonInfoLayout'
+import LeadMagnetLayout from './components/layouts/LeadMagnetLayout'
 
 function App() {
   const [formSubmitted, setFormSubmitted] = useState(false)
@@ -64,34 +60,58 @@ function App() {
     event.currentTarget.reset()
   }
 
-  return (
-    <div className="page">
-      <AttentionNudge generalWhatsAppLink={generalWhatsAppLink} />
-      <Header
-        generalWhatsAppLink={generalWhatsAppLink}
-        promoVisible={promoVisible}
-        onDismissPromo={dismissPromo}
-      />
+  // Common props for all layouts
+  const commonProps = {
+    generalWhatsAppLink,
+    formSubmitted,
+    onSubmit: handleFormSubmit,
+    thankYouWhatsAppLink,
+  }
 
-      <main className="container">
-        <HighlightsSection />
-        <AmenitiesSection />
-        <LocationSection />
-        <ContactSection
-          formSubmitted={formSubmitted}
-          onSubmit={handleFormSubmit}
-          thankYouWhatsAppLink={thankYouWhatsAppLink}
-          generalWhatsAppLink={generalWhatsAppLink}
+  // Render the appropriate layout based on ACTIVE_LAYOUT
+  switch (ACTIVE_LAYOUT) {
+    case 'hero-cta':
+      return (
+        <HeroCTALayout
+          {...commonProps}
+          promoVisible={promoVisible}
+          onDismissPromo={dismissPromo}
+        />
+      )
+
+    case 'story-flow':
+      return (
+        <StoryFlowLayout
+          {...commonProps}
+          promoVisible={promoVisible}
+          onDismissPromo={dismissPromo}
+        />
+      )
+
+    case 'comparison-info':
+      return (
+        <ComparisonInfoLayout
+          {...commonProps}
+          promoVisible={promoVisible}
+          onDismissPromo={dismissPromo}
           whatsappQrUrl={whatsappQrUrl}
           callbackQrUrl={callbackQrUrl}
         />
-      </main>
+      )
 
-      <Footer />
+    case 'lead-magnet':
+      return <LeadMagnetLayout {...commonProps} />
 
-      <FloatingWhatsapp href={formSubmitted ? thankYouWhatsAppLink : generalWhatsAppLink} />
-    </div>
-  )
+    default:
+      // Fallback to hero-cta if layout is not recognized
+      return (
+        <HeroCTALayout
+          {...commonProps}
+          promoVisible={promoVisible}
+          onDismissPromo={dismissPromo}
+        />
+      )
+  }
 }
 
 export default App
