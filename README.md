@@ -160,8 +160,8 @@ Potential improvements for future versions:
 ## 📞 Support
 
 For technical support or customization requests:
-- Email: realtyavyukta@gmail.com
-- Phone: 9289329903
+- Email: realtytest@gmail.com
+- Phone: 9999999999
 - WhatsApp: Available for instant support
 
 ---
