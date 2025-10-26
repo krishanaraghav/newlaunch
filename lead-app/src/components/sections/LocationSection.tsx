@@ -4,7 +4,7 @@ const LocationSection = () => (
   <section id="location">
     <div className="section-heading">
       <h2>Location Advantage</h2>
-      <a href="#contact">Ask for directions</a>
+        {/* <a href="#contact">Ask for directions</a> */}
     </div>
     <div className="grid-cards">
       {PROJECT_CONFIG.landmarks.map((landmark) => (

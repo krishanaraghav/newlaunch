@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Main Property Page - HIGHEST PRIORITY -->
+  <url>
+    <loc>https://sec90ganga.com/</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://sec90ganga.com/assets/newlaunch.jpeg</image:loc>
+      <image:title>Ganga Sec90 Gurgaon - Main Property Image</image:title>
+      <image:caption>Luxury apartments in Sector 90 Gurgaon</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sec90ganga.com/assets/newlaunch1.jpeg</image:loc>
+      <image:title>Ganga Sec90 Gurgaon - Property View</image:title>
+      <image:caption>Premium residential project in Sector 90</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://sec90ganga.com/assets/de.jpg</image:loc>
+      <image:title>Dwarka Expressway Connectivity</image:title>
+      <image:caption>Excellent connectivity via Dwarka Expressway</image:caption>
+    </image:image>
+  </url>
+  
+  <!-- Alternate Landing Page -->
+  <url>
+    <loc>https://sec90ganga.com/chrome-style.html</loc>
+    <lastmod>2025-01-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- NOTE: Development/alternate versions (chrome-style.html) are excluded 
+       because they have noindex meta tags and canonical pointing to main page -->
+  
+</urlset>

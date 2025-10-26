@@ -10,7 +10,7 @@ const PromoBanner = ({ visible, onDismiss }: PromoBannerProps) => (
     </span>
     <div className="promo-content">
       <strong>Exclusive deals on premium residences!</strong>
-      <span>Unlock curated pricing and complimentary upgrades when you schedule a call today.</span>
+      <span>Unlock curated pricing and complimentary upgrades when you schedule <br /> a call today.</span>
     </div>
     <div className="promo-actions">
       <a href="#contact" className="promo-link">

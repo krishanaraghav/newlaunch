@@ -8,12 +8,12 @@ import highlightImg5 from '../assets/rps.jpg'
 export const SECTION_ORDER = ['highlights', 'amenities', 'location', 'contact'] as const
 
 export const highlightLabels = [
-  'Launch Celebration',
-  'Hyper-Connected Location',
-  'Signature Residences',
-  'High-Growth Opportunity',
-  'Resort-Like Lifestyle',
-  'Investment Advantage',
+  'Ganga Sec90 Gurgaon Innovation Launch',
+  'Smart Apartment Connectivity',
+  'Futuristic Residential Design',
+  'High-Growth Tech Investment',
+  'Sustainable Living Experience',
+  'Smart Investment Future',
 ]
 
 export const highlightImages = [
@@ -26,57 +26,57 @@ export const highlightImages = [
 ]
 
 export const highlightCTA = [
-  'Explore details',
-  'Discover connectivity',
-  'View residence specs',
-  'See growth insights',
-  'Experience the lifestyle',
-  'Understand the advantage',
+  'Explore Innovation',
+  'Discover Smart Living',
+  'View Modern Homes',
+  'Analyze Tech Investment',
+  'Experience Sustainability',
+  'Learn Future Living',
 ]
 
-export const amenityCTA = 'Included in membership'
+export const amenityCTA = 'Smart amenities included'
 
 export const PROJECT_CONFIG = {
-  companyName: 'Ganga Realty',
+  companyName: 'Avyukta Realty',
   partnerName: 'Ganga Realty',
-  projectName: 'Ganga Realty Sector 90',
+  projectName: 'Ganga Sec90 Gurgaon',
   location: 'Sector 90, Gurugram',
-  tagline: 'Your Gateway to Luxury Living in New Gurugram',
+  tagline: 'Modern Luxury Living in Sec90 Gurgaon - Where Dreams Come Home',
   description:
-    'Ganga Realty presents an exclusive residential project in Sector 90, Gurugram. Experience a blend of modern design, strategic location, and world-class amenities.',
+    'Welcome to Ganga Sec90 Gurgaon - a revolutionary residential project offering contemporary 3, 4 BHK apartments with cutting-edge amenities, strategic Dwarka Expressway access, and sustainable living solutions. Experience the future of urban living.',
   highlights: [
-    'After the grand success of Kashi Ganga Realty, we are proud to launch a new landmark project in Sector 90, Gurugram.',
-    'Prime location with excellent connectivity via Dwarka Expressway and NH-48',
-    'Luxury 3, and 4 BHK apartments with modern amenities',
-    'Investment opportunity in rapidly developing New Gurugram',
-    'Resort-style amenities curated for premium living',
-    'Secure community with elevated wellbeing features',
+    'Ganga Sec90 Gurgaon: Innovative residential development showcasing futuristic design and eco-friendly construction in Sector 90',
+    'Strategic positioning with direct Dwarka Expressway connectivity and metro accessibility - perfect for modern urban professionals',
+    'Contemporary 2, 3, 4 BHK apartments featuring smart home technology, energy-efficient systems, and premium finishes',
+    'High-potential investment destination in New Gurugram\'s emerging residential hub with excellent appreciation prospects',
+    'Sustainable living with green building features, solar panels, rainwater harvesting, and eco-friendly amenities',
+    'Technology-enabled community with smart security, automated systems, and digital lifestyle conveniences',
   ],
   amenities: [
-    'Swimming Pool & Clubhouse',
-    'Gymnasium & Spa',
-    "Children's Play Area",
-    '24/7 Security',
-    'Landscaped Gardens',
-    'Power Backup',
-    'Parking Facilities',
-    'Jogging Track',
+    'Olympic-Size Swimming Pool & Modern Clubhouse',
+    'Advanced Fitness Studio & Yoga Pavilion',
+    'Interactive Kids Zone & Learning Center',
+    'AI-Powered Security & Smart Access Control',
+    'Vertical Gardens & Sustainable Landscaping',
+    'Solar Power Integration & Green Energy',
+    'Automated Parking System & EV Charging',
+    'Multi-Purpose Sports Complex & Wellness Center',
   ],
   landmarks: [
     {
-      name: 'Dwarka Expressway',
+      name: 'Dwarka Expressway Smart Connectivity',
       image: highlightImg2,
-      description: 'Seamless connectivity to Delhi and beyond',
+      description: 'Ganga Sec90 Gurgaon offers intelligent connectivity to Dwarka Expressway with smart traffic management and reduced commute times to Delhi',
     },
     {
-      name: 'IMT Manesar',
+      name: 'IMT Manesar Tech Hub',
       image: highlightImg4,
-      description: 'Major industrial and business hub nearby',
+      description: 'Proximity to IMT Manesar technology and business district - ideal for IT professionals and entrepreneurs',
     },
     {
-      name: 'RPS International School',
+      name: 'RPS International School Network',
       image: highlightImg5,
-      description: 'Quality education options for families',
+      description: 'Access to premium educational institutions including RPS International School - ensuring world-class education for your children',
     },
   ],
   contact: {
@@ -94,4 +94,3 @@ export const CARD_COUNTS = {
 }
 
 export type SectionKey = (typeof SECTION_ORDER)[number]
-

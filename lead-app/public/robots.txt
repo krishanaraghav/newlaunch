@@ -1,0 +1,28 @@
+# Robots.txt for Ganga Sec90 Gurgaon - Avyukta Realty Website
+# Last updated: 2025-01-16
+
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /src/assets/
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /src/chrome-style.html
+Disallow: /chrome-style.html
+
+# Preferred URL for main content
+Sitemap: https://sec90ganga.com/sitemap.xml
+
+# Crawl delay to prevent overloading server
+Crawl-delay: 1
+
+# Allow all image indexing
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow Google to crawl everything except disallowed paths
+User-agent: Googlebot
+Allow: /
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /src/chrome-style.html

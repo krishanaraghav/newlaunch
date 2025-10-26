@@ -5,18 +5,19 @@ const HighlightsSection = () => (
   <section id="highlights">
     <div className="section-heading">
       <h2>Project Highlights</h2>
-      <a href="#contact">View brochure</a>
+      {/* <a href="#contact">View brochure</a> */}
     </div>
     <div className="grid-cards">
-      {PROJECT_CONFIG.highlights.map((item, index) => {
+      {PROJECT_CONFIG.highlights.slice(0, 3).map((item, index) => {
         const media = highlightImages[index]
         const icon = highlightIcons[index] || 'fa-star'
         const label = highlightLabels[index] || `Signature Highlight ${index + 1}`
         return (
           <div
             key={`highlight-${index}`}
-            className={media ? 'card media-card' : 'card'}
-            style={media ? ({ '--media': `url(${media})` } as React.CSSProperties) : undefined}
+            className='card'
+         //   className={media ? 'card media-card' : 'card'}
+          //  style={media ? ({ '--media': `url(${media})` } as React.CSSProperties) : undefined}
           >
             <i className={`fas ${icon}`} aria-hidden="true" />
             <h3>{label}</h3>

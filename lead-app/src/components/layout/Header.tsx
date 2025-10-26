@@ -36,7 +36,7 @@ const Header = ({ generalWhatsAppLink, promoVisible, onDismissPromo }: HeaderPro
       <div className="hero">
         <div className="hero-copy">
           <h1>
-            Luxury Living in <span>{PROJECT_CONFIG.location}</span>
+           Where Luxury Meets Lifestyle <span>{PROJECT_CONFIG.location}</span>
           </h1>
           <p>{PROJECT_CONFIG.description}</p>
           <div className="hero-actions">
