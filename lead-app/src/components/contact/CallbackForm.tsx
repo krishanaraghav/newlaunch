@@ -4,9 +4,11 @@ import { useId, useState } from 'react'
 type CallbackFormProps = {
   onSubmit: FormEventHandler<HTMLFormElement>
   generalWhatsAppLink: string
+  isSubmitting?: boolean
+  submitError?: string | null
 }
 
-const CallbackForm = ({ onSubmit, generalWhatsAppLink }: CallbackFormProps) => {
+const CallbackForm = ({ onSubmit, generalWhatsAppLink, isSubmitting = false, submitError = null }: CallbackFormProps) => {
   const nameId = useId()
   const phoneId = useId()
   const emailId = useId()
@@ -43,11 +45,31 @@ const CallbackForm = ({ onSubmit, generalWhatsAppLink }: CallbackFormProps) => {
           Add email (optional)
         </button>
       )}
+      {submitError && (
+        <div className="form-error" role="alert">
+          <i className="fas fa-exclamation-circle" aria-hidden="true" />
+          <span>{submitError}</span>
+        </div>
+      )}
       <div className="cta-row">
-        <button type="submit" className="cta">
-          <i className="fas fa-paper-plane" aria-hidden="true" /> Request Callback
+        <button type="submit" className="cta" disabled={isSubmitting}>
+          {isSubmitting ? (
+            <>
+              <span className="loading-spinner" />
+              Submitting...
+            </>
+          ) : (
+            <>
+              <i className="fas fa-paper-plane" aria-hidden="true" /> Request Callback
+            </>
+          )}
         </button>
-        <a className="cta secondary" target="_blank" rel="noreferrer" href={generalWhatsAppLink}>
+        <a 
+          className={`cta secondary ${isSubmitting ? 'disabled' : ''}`} 
+          target="_blank" 
+          rel="noreferrer" 
+          href={generalWhatsAppLink}
+        >
           <i className="fab fa-whatsapp" aria-hidden="true" /> Chat on WhatsApp
         </a>
       </div>

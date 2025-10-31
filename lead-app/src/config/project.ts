@@ -8,9 +8,9 @@ import highlightImg5 from '../assets/rps.jpg'
 export const SECTION_ORDER = ['highlights', 'amenities', 'location', 'contact'] as const
 
 export const highlightLabels = [
-  'Launch Celebration',
-  'Hyper-Connected Location',
-  'Signature Residences',
+  'Grand Launch Event',
+  'Seamless Urban Connectivity',
+  'Iconic Living Spaces',
   'High-Growth Opportunity',
   'Resort-Like Lifestyle',
   'Investment Advantage',
@@ -26,36 +26,39 @@ export const highlightImages = [
 ]
 
 export const highlightCTA = [
-  'Explore details',
-  'Discover connectivity',
-  'View residence specs',
+  'Explore the launch',
+  'Unlock connectivity',
+  'Browse our homes',
   'See growth insights',
   'Experience the lifestyle',
   'Understand the advantage',
 ]
 
-export const amenityCTA = 'Included in membership'
+export const amenityCTA = 'Exclusive with ownership'
 
 export const PROJECT_CONFIG = {
   companyName: 'Ganga Realty',
   partnerName: 'Ganga Realty',
   projectName: 'Ganga Realty Sector 90',
   location: 'Sector 90, Gurugram',
-  tagline: 'Your Gateway to Luxury Living in New Gurugram',
+  tagline: 'Where Luxury Meets Lifestyle',
   description:
-    'Ganga Realty presents an exclusive residential project in Sector 90, Gurugram. Experience a blend of modern design, strategic location, and world-class amenities.',
+    'Welcome to Ganga Realty\'s prestigious new address in Sector 90, Gurugram—where luxury, connectivity, and lifestyle come together in perfect harmony.',
+  seoDescription:
+    'Ganga Realty Sector 90 Luxury Apartments at Gurgaon is a new residential flats and Apartments with 2 BHK, 3 BHK, and 4 BHK residences. Book your home now with best deals.',
+  seoKeywords: 'buy apartments in Ganga Realty Sector 90 gurgaon, book apartments in Ganga Realty Sector 90 gurgaon, apartments in Ganga Realty Sector 90 gurgaon, Book Ganga Realty Sector 90 gurgaon, apartments in ganga realty Sector 90 gurgaon',
   highlights: [
-    'After the grand success of Kashi Ganga Realty, we are proud to launch a new landmark project in Sector 90, Gurugram.',
-    'Prime location with excellent connectivity via Dwarka Expressway and NH-48',
-    'Luxury 3, and 4 BHK apartments with modern amenities',
+    'Following the remarkable success of Kashi by Ganga Realty, we proudly unveil our next landmark in Sector 90, Gurugram.',
+    'Strategically positioned with effortless access to Dwarka Expressway and NH-48',
+    'Premium 3 & 4 BHK homes crafted with contemporary design and features',
     'Investment opportunity in rapidly developing New Gurugram',
     'Resort-style amenities curated for premium living',
     'Secure community with elevated wellbeing features',
   ],
   amenities: [
-    'Swimming Pool & Clubhouse',
-    'Gymnasium & Spa',
-    "Children's Play Area",
+    'Swimming Pool & Elegant Clubhouse',
+    'Well-equipped Gym & Rejuvenating Spa',
+    'Dedicated Children\'s Play Area',
     '24/7 Security',
     'Landscaped Gardens',
     'Power Backup',
@@ -66,17 +69,17 @@ export const PROJECT_CONFIG = {
     {
       name: 'Dwarka Expressway',
       image: highlightImg2,
-      description: 'Seamless connectivity to Delhi and beyond',
+      description: 'Fast-track access to Delhi and major destinations',
     },
     {
       name: 'IMT Manesar',
       image: highlightImg4,
-      description: 'Major industrial and business hub nearby',
+      description: 'Thriving hub for industry and commerce',
     },
     {
       name: 'RPS International School',
       image: highlightImg5,
-      description: 'Quality education options for families',
+      description: 'Top-tier education for growing families',
     },
   ],
   contact: {

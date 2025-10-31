@@ -93,6 +93,7 @@ nav ul {
   font-size: clamp(2.25rem, 6vw, 3.5rem);
   line-height: 1.15;
   margin-bottom: 1.25rem;
+  animation: heroTitleSlide 0.8s ease-out;
 }
 
 .hero-copy p {
@@ -100,12 +101,14 @@ nav ul {
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
+  animation: heroDescriptionFade 1s ease-out 0.2s both;
 }
 
 .hero-actions {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  animation: heroActionsBounce 1s ease-out 0.4s both;
 }
 
 .promo-banner {
@@ -221,6 +224,7 @@ nav ul {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
+  animation: heroMetaSlide 1s ease-out 0.6s both;
 }
 
 .meta-card {
@@ -229,6 +233,16 @@ nav ul {
   padding: 1.1rem;
   display: grid;
   gap: 0.4rem;
+  animation: metaCardPulse 0.8s ease-out;
+  transition: transform 0.3s ease;
+}
+
+.meta-card:nth-child(1) { animation-delay: 0.7s; }
+.meta-card:nth-child(2) { animation-delay: 0.8s; }
+.meta-card:nth-child(3) { animation-delay: 0.9s; }
+
+.meta-card:hover {
+  transform: translateY(-5px) scale(1.02);
 }
 
 .meta-card span:first-child {
@@ -295,6 +309,12 @@ main {
   background: none;
 }
 
+.card.media-card p {
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+  background: none;
+}
 .card.media-card::before {
   content: '';
   position: absolute;
@@ -801,6 +821,31 @@ footer .copyright-text {
   color: #fde68a;
 }
 
+/* Hero Media Animation */
+.hero-media {
+  animation: heroImageZoom 1.2s ease-out 0.3s both;
+  overflow: hidden;
+}
+
+.hero-media img {
+  animation: heroImageSlide 1s ease-out 0.5s both;
+  transition: transform 0.5s ease;
+}
+
+.hero-media:hover img {
+  transform: scale(1.05);
+}
+
+/* Promo Banner Animation */
+.promo-banner {
+  animation: promoBannerSlide 0.8s ease-out 1s both;
+}
+
+/* Property Badge Animation */
+.brand {
+  animation: brandSlideIn 0.6s ease-out;
+}
+
 @media (max-width: 640px) {
   .hero {
     grid-template-columns: 1fr;
@@ -879,6 +924,230 @@ footer .copyright-text {
   .trust-badges {
     justify-content: center;
   }
+
+  .modal-content {
+    padding: 2rem 1.5rem;
+    margin: 1rem;
+    max-width: calc(100% - 2rem);
+  }
+
+  .modal-content .callback-form .cta-row {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .modal-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .modal-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .modal-header p {
+    font-size: 0.95rem;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 24px;
+  padding: 2.5rem;
+  max-width: 520px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: scaleIn 0.3s ease-out;
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(0, 0, 0, 0.08);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.15);
+  transform: rotate(90deg) scale(1.1);
+}
+
+.modal-close i {
+  font-size: 1.1rem;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover i {
+  color: #333;
+}
+
+.modal-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.modal-header h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.modal-header p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.modal-content .callback-form {
+  background: transparent;
+  border: none;
+  padding: 0;
+  gap: 1.5rem;
+}
+
+.modal-content .callback-form .form-field {
+  gap: 0.5rem;
+}
+
+.modal-content .callback-form label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.01em;
+}
+
+.modal-content .callback-form input {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  border: 2px solid #e5e7eb;
+  background: #fafafa;
+  font-size: 1rem;
+  color: var(--text);
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.modal-content .callback-form .form-field:nth-child(1) input { animation-delay: 0.1s; }
+.modal-content .callback-form .form-field:nth-child(2) input { animation-delay: 0.2s; }
+.modal-content .callback-form .form-field:nth-child(3) input { animation-delay: 0.3s; }
+.modal-content .callback-form .cta-row { animation: fadeInUp 0.5s ease-out 0.4s both; }
+
+.modal-content .callback-form input:focus {
+  border-color: var(--accent-blue);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+  transform: translateY(-1px);
+}
+
+.modal-content .callback-form input::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.modal-content .callback-form .cta-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.modal-content .callback-form .cta {
+  padding: 0.6rem 1.5rem;
+  font-size: 0.85em;
+  font-weight: 600;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  text-align: center;
+  justify-content: center;
+}
+
+.modal-content .callback-form .cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.2);
+}
+
+.modal-content .callback-form .cta.secondary {
+  background: var(--accent-blue);
+  color: #fff;
+  border: 2px solid var(--accent-blue);
+}
+
+.modal-content .callback-form .cta.secondary:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  box-shadow: 0 8px 25px rgba(11, 31, 78, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (min-width: 640px) {
@@ -939,6 +1208,548 @@ footer .copyright-text {
     grid-column: auto;
     text-align: left;
     align-self: center;
+  }
+}
+
+/* ========================================
+   USER-FRIENDLY ANIMATIONS
+   ======================================== */
+
+/* Smooth Scrolling for Better UX */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Page Load Animations */
+.page {
+  animation: fadeInPage 0.6s ease-out;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth Section Fade In */
+section {
+  animation: fadeInSection 0.8s ease-out;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered Animations for Grid Cards */
+.grid-cards .card {
+  animation: slideInCard 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.grid-cards .card:nth-child(1) { animation-delay: 0.1s; }
+.grid-cards .card:nth-child(2) { animation-delay: 0.2s; }
+.grid-cards .card:nth-child(3) { animation-delay: 0.3s; }
+.grid-cards .card:nth-child(4) { animation-delay: 0.4s; }
+.grid-cards .card:nth-child(5) { animation-delay: 0.5s; }
+.grid-cards .card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideInCard {
+  from {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Button Hover Animations */
+.cta, .attention-link {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta::before, .attention-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cta:hover::before, .attention-link:hover::before {
+  left: 100%;
+}
+
+/* Smooth Button Press Effect */
+.cta:active, .attention-link:active {
+  transform: scale(0.96);
+  transition: transform 0.1s ease;
+}
+
+/* Smooth Image Loading */
+img {
+  transition: opacity 0.4s ease;
+}
+
+img:not([src]) {
+  opacity: 0;
+}
+
+img[src] {
+  opacity: 1;
+}
+
+/* Form Input Focus Animations */
+input:focus, textarea:focus {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Icon Rotate on Hover */
+.fa-paper-plane {
+  transition: transform 0.3s ease;
+}
+
+.cta:hover .fa-paper-plane {
+  transform: translate(3px, -3px) rotate(15deg);
+}
+
+/* WhatsApp Button Pulse Effect */
+.fab.fa-whatsapp {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Smooth Icon Transitions */
+i {
+  transition: transform 0.3s ease;
+}
+
+button:hover i,
+a:hover i {
+  transform: scale(1.1);
+}
+
+/* Attention Nudge Slide In */
+.attention-nudge {
+  animation: slideInFromTop 0.5s ease-out;
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Floating WhatsApp Button */
+.floating-whatsapp {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Card Hover Lift Effect */
+.grid-cards .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-cards .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Field Appear Animation */
+.callback-form .form-field {
+  animation: formFieldAppear 0.4s ease-out;
+}
+
+@keyframes formFieldAppear {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.callback-form .form-field:nth-child(1) { animation-delay: 0.1s; }
+.callback-form .form-field:nth-child(2) { animation-delay: 0.2s; }
+.callback-form .form-field:nth-child(3) { animation-delay: 0.3s; }
+.callback-form .form-field:nth-child(4) { animation-delay: 0.4s; }
+
+/* QR Code Fade In */
+.qr-code {
+  animation: qrFadeIn 0.8s ease-out;
+}
+
+@keyframes qrFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+/* Trust Badges Animation */
+.trust-badges {
+  animation: badgesSlideIn 0.8s ease-out;
+}
+
+@keyframes badgesSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Loading Spinner (if needed for async operations) */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Animation Optimizations */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Smooth Page Transitions */
+@media (max-width: 640px) {
+  /* Faster animations on mobile */
+  section {
+    animation-duration: 0.4s;
+  }
+  
+  .grid-cards .card {
+    animation-duration: 0.4s;
+  }
+}
+
+/* ========================================
+   UX IMPROVEMENTS - FORM STATES
+   ======================================== */
+
+/* Form Error Message */
+.form-error {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: #fee2e2;
+  border: 1px solid #ef4444;
+  border-radius: 12px;
+  color: #dc2626;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  animation: slideInError 0.3s ease-out;
+}
+
+@keyframes slideInError {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-error i {
+  color: #dc2626;
+  font-size: 1.1rem;
+}
+
+.form-error span {
+  font-weight: 500;
+}
+
+/* Loading Spinner in Button */
+.cta .loading-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-right: 0.5rem;
+}
+
+/* Disabled Button State */
+.cta:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.cta:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Disabled Link State */
+.cta.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.cta.disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Success Message Slide Up */
+@keyframes slideUpSuccess {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Validation States */
+input:invalid:not(:placeholder-shown) {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: #22c55e;
+}
+
+/* Focus State Enhancement */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+}
+
+/* Button Loading State Animation */
+.cta:disabled {
+  animation: none;
+}
+
+/* Input Loading State (if needed) */
+input:disabled {
+  background: #f3f4f6;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Success Check Animation */
+.success-check {
+  display: inline-block;
+  animation: checkmark 0.6s ease-out;
+}
+
+@keyframes checkmark {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   HERO SECTION PROPERTY-SPECIFIC ANIMATIONS
+   ======================================== */
+
+/* Hero Title Slide In */
+@keyframes heroTitleSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hero Description Fade In */
+@keyframes heroDescriptionFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Actions Bounce In */
+@keyframes heroActionsBounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hero Meta Cards Slide */
+@keyframes heroMetaSlide {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Meta Card Pulse */
+@keyframes metaCardPulse {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hero Image Zoom In */
+@keyframes heroImageZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hero Image Slide */
+@keyframes heroImageSlide {
+  from {
+    opacity: 0;
+    transform: translateX(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Promo Banner Slide */
+@keyframes promoBannerSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Brand Slide In */
+@keyframes brandSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
 

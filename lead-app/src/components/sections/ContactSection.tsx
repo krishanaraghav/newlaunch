@@ -7,6 +7,8 @@ import QrGrid from '../contact/QrGrid'
 
 type ContactSectionProps = {
   formSubmitted: boolean
+  isSubmitting?: boolean
+  submitError?: string | null
   onSubmit: FormEventHandler<HTMLFormElement>
   thankYouWhatsAppLink: string
   generalWhatsAppLink: string
@@ -16,6 +18,8 @@ type ContactSectionProps = {
 
 const ContactSection = ({
   formSubmitted,
+  isSubmitting = false,
+  submitError = null,
   onSubmit,
   thankYouWhatsAppLink,
   generalWhatsAppLink,
@@ -50,7 +54,12 @@ const ContactSection = ({
       </div>
       <div className="callback-container">
         {!formSubmitted ? (
-          <CallbackForm onSubmit={onSubmit} generalWhatsAppLink={generalWhatsAppLink} />
+          <CallbackForm 
+            onSubmit={onSubmit} 
+            generalWhatsAppLink={generalWhatsAppLink}
+            isSubmitting={isSubmitting}
+            submitError={submitError}
+          />
         ) : (
           <ThankYouPanel thankYouWhatsAppLink={thankYouWhatsAppLink} />
         )}

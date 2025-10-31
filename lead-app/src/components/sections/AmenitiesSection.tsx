@@ -1,5 +1,5 @@
 import { useIsMobile } from '../../hooks/useIsMobile'
-import { PROJECT_CONFIG, highlightImages, highlightCTA } from '../../config/project'
+import { PROJECT_CONFIG, highlightImages, amenityCTA } from '../../config/project'
 
 const AmenitiesSection = () => {
   const isMobile = useIsMobile()
@@ -23,7 +23,7 @@ const AmenitiesSection = () => {
             >
               <h3>{item}</h3>
               <p>Designed to deliver a premium community lifestyle with thoughtfully curated spaces for every resident.</p>
-              <span>{highlightCTA[index] || 'Included in membership'}</span>
+              <span>{amenityCTA}</span>
             </div>
           )
         })}
