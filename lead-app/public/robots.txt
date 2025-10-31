@@ -1,15 +1,18 @@
-# Robots.txt for Ganga Realty Sector 90 Gurgaon
-# Last updated: 2025-01-16
+# Robots.txt for Emaar Serenity Hills Sector 86 Gurgaon
+# Emaar India - Luxury Residential Project
+# Channel Partner: Avyukta Realty
+# Last updated: 2025-01-31
 
 User-agent: *
 Allow: /
 Allow: /assets/
+Disallow: /api/
 Disallow: /node_modules/
 Disallow: /dist/
 Disallow: /src/
 
 # Sitemap
-Sitemap: https://gangasec90.com/sitemap.xml
+Sitemap: https://emaargurgaonsector86.com/sitemap.xml
 
 # Crawl delay to prevent overloading server
 Crawl-delay: 1
@@ -17,8 +20,17 @@ Crawl-delay: 1
 # Allow all image indexing
 User-agent: Googlebot-Image
 Allow: /
+Allow: /assets/*.jpg
+Allow: /assets/*.jpeg
+Allow: /assets/*.png
+Allow: /assets/*.webp
 
 # Allow Google to crawl everything except disallowed paths
 User-agent: Googlebot
 Allow: /
+
+# Bing specific directives
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
 

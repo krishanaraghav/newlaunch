@@ -35,7 +35,7 @@ const Modal = ({ isOpen, onClose, generalWhatsAppLink }: ModalProps) => {
     const phone = formData.get('phone') as string
     const email = formData.get('email') as string
 
-    const message = `Hello ${PROJECT_CONFIG.companyName}, I am interested in ${PROJECT_CONFIG.projectName}.
+    const message = `Hello ${PROJECT_CONFIG.partnerName}, I am interested in ${PROJECT_CONFIG.projectName}.
     
 Name: ${name}
 Phone: ${phone}

@@ -7,7 +7,7 @@ export const buildWhatsAppLink = (message: string) =>
   `https://wa.me/${PROJECT_CONFIG.contact.whatsapp}?text=${encodeURIComponent(message)}`
 
 export const defaultWhatsAppMessage = () =>
-  `Hello ${PROJECT_CONFIG.companyName}, I am interested in ${PROJECT_CONFIG.projectName} at ${PROJECT_CONFIG.location}. Please share more details.`
+  `Hello ${PROJECT_CONFIG.partnerName}, I am interested in ${PROJECT_CONFIG.projectName} at ${PROJECT_CONFIG.location}. Please share more details.`
 
 export const useWhatsAppLink = (message: string) => useMemo(() => buildWhatsAppLink(message), [message])
 

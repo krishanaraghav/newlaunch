@@ -5,6 +5,7 @@ import { PROJECT_CONFIG } from './config/project'
 import { useFooterYear } from './hooks/useFooterYear'
 import { usePromoBanner } from './hooks/usePromoBanner'
 import { useModal } from './hooks/useModal'
+import { useTheme } from './hooks/useTheme'
 import { defaultWhatsAppMessage, useWhatsAppLink } from './utils/whatsapp'
 import { submitLead } from './utils/lead'
 import Header from './components/layout/Header'
@@ -16,6 +17,7 @@ import FloatingWhatsapp from './components/common/FloatingWhatsapp'
 import Footer from './components/layout/Footer'
 import AttentionNudge from './components/common/AttentionNudge'
 import Modal from './components/common/Modal'
+import AnimatedBackground from './components/common/AnimatedBackground'
 
 function App() {
   const [formSubmitted, setFormSubmitted] = useState(false)
@@ -25,6 +27,7 @@ function App() {
   const [thankYouMessage, setThankYouMessage] = useState(defaultWhatsAppMessage())
   const { visible: promoVisible, dismiss: dismissPromo } = usePromoBanner()
   const { isOpen: modalOpen, closeModal } = useModal(4000) // Show modal after 4 seconds
+  const { isDarkMode, toggleTheme } = useTheme()
 
   useFooterYear()
 
@@ -53,7 +56,7 @@ function App() {
 
     const phone = phoneRaw.replace(/\s+/g, '')
     const emailLine = email ? `\nEmail: ${email}` : ''
-    const message = `Hello ${PROJECT_CONFIG.companyName},\nI just shared my details for ${PROJECT_CONFIG.projectName}.\nName: ${name}\nPhone: ${phone}${emailLine}`
+    const message = `Hello ${PROJECT_CONFIG.partnerName},\nI just shared my details for ${PROJECT_CONFIG.projectName}.\nName: ${name}\nPhone: ${phone}${emailLine}`
 
     try {
       await submitLead({
@@ -76,12 +79,16 @@ function App() {
   }
 
   return (
-    <div className="page">
-      <AttentionNudge generalWhatsAppLink={generalWhatsAppLink} />
-      <Header
+    <>
+      <AnimatedBackground />
+      <div className="page">
+        <AttentionNudge generalWhatsAppLink={generalWhatsAppLink} />
+        <Header
         generalWhatsAppLink={generalWhatsAppLink}
         promoVisible={promoVisible}
         onDismissPromo={dismissPromo}
+        isDarkMode={isDarkMode}
+        onToggleTheme={toggleTheme}
       />
 
       <main className="container">
@@ -109,7 +116,8 @@ function App() {
         onClose={closeModal} 
         generalWhatsAppLink={generalWhatsAppLink} 
       />
-    </div>
+      </div>
+    </>
   )
 }
 

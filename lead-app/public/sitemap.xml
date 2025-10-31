@@ -1,29 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   
-  <!-- Main Property Page - HIGHEST PRIORITY -->
+  <!-- Main Property Page - Emaar Sector 86 | Emaar Serenity Hills Sec 86 Gurgaon -->
   <url>
-    <loc>https://gangasec90.com/</loc>
-    <lastmod>2025-01-16</lastmod>
+    <loc>https://emaargurgaonsector86.com/</loc>
+    <lastmod>2025-01-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    
+    <!-- Hero/Main Property Image -->
     <image:image>
-      <image:loc>https://gangasec90.com/assets/newlaunch.jpeg</image:loc>
-      <image:title>Ganga Sec90 Gurgaon - Main Property Image</image:title>
-      <image:caption>Luxury apartments in Sector 90 Gurgaon</image:caption>
+      <image:loc>https://emaargurgaonsector86.com/assets/Emaar-Serenity-Hills-Sector-86-Gurgaon.png</image:loc>
+      <image:title>Emaar Sector 86 | Emaar Serenity Hills Sector 86 Gurgaon | Emaar Sec 86</image:title>
+      <image:caption>Emaar Sec 86 Gurgaon - Emaar Serenity Hills Sec 86 offers Dubai Style Luxury Living. 2, 3, 4 BHK &amp; 4 BHK + S Apartments starting at 2.70 Cr</image:caption>
     </image:image>
+    
+    <!-- Highlight Images -->
     <image:image>
-      <image:loc>https://gangasec90.com/assets/newlaunch1.jpeg</image:loc>
-      <image:title>Ganga Sec90 Gurgaon - Property View</image:title>
-      <image:caption>Premium residential project in Sector 90</image:caption>
+      <image:loc>https://emaargurgaonsector86.com/assets/newlaunch1.jpeg</image:loc>
+      <image:title>Emaar Sector 86 - Emaar Serenity Hills Sec 86 Premium Interiors</image:title>
+      <image:caption>Emaar Sec 86 features 7 Towers | G+37 Floors | 100,000 Sq.Ft Grand Clubhouse</image:caption>
     </image:image>
+    
+    <!-- Location Images -->
     <image:image>
-      <image:loc>https://gangasec90.com/assets/de.jpg</image:loc>
-      <image:title>Dwarka Expressway Connectivity</image:title>
-      <image:caption>Excellent connectivity via Dwarka Expressway</image:caption>
+      <image:loc>https://emaargurgaonsector86.com/assets/de.jpg</image:loc>
+      <image:title>Emaar Serenity Hills Sector 86 Gurgaon - Dwarka Expressway 4 Minutes</image:title>
+      <image:caption>Emaar Sector 86 location - Excellent connectivity to Delhi and major destinations</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://emaargurgaonsector86.com/assets/imt.webp</image:loc>
+      <image:title>Emaar Sec 86 - Golf Course Road &amp; DLF Cyber City Access</image:title>
+      <image:caption>Emaar Sector 86 Gurgaon - Easy access to corporate offices, Cyber Hub and Ambience Mall</image:caption>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://emaargurgaonsector86.com/assets/IGI-Airport.png</image:loc>
+      <image:title>Emaar Serenity Hills Sec 86 Gurgaon - IGI Airport 20 Minutes</image:title>
+      <image:caption>Emaar Sector 86 - Upcoming metro station in close proximity</image:caption>
     </image:image>
   </url>
   
+  <!-- Highlights Section -->
+  <url>
+    <loc>https://emaargurgaonsector86.com/#highlights</loc>
+    <lastmod>2025-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Amenities Section -->
+  <url>
+    <loc>https://emaargurgaonsector86.com/#amenities</loc>
+    <lastmod>2025-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Location Section -->
+  <url>
+    <loc>https://emaargurgaonsector86.com/#location</loc>
+    <lastmod>2025-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Contact Section -->
+  <url>
+    <loc>https://emaargurgaonsector86.com/#contact</loc>
+    <lastmod>2025-01-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
 </urlset>
-

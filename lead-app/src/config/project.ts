@@ -1,19 +1,19 @@
-import heroImg from '../assets/newlaunch.jpeg'
+import heroImg from '../assets/Emaar-Serenity-Hills-Sector-86-Gurgaon.png'
 import highlightImg1 from '../assets/newlaunch1.jpeg'
 import highlightImg2 from '../assets/de.jpg'
 import highlightImg3 from '../assets/newlaunch.jpeg'
 import highlightImg4 from '../assets/imt.webp'
-import highlightImg5 from '../assets/rps.jpg'
+import highlightImg5 from '../assets/IGI-Airport.png'
 
 export const SECTION_ORDER = ['highlights', 'amenities', 'location', 'contact'] as const
 
 export const highlightLabels = [
-  'Grand Launch Event',
-  'Seamless Urban Connectivity',
-  'Iconic Living Spaces',
-  'High-Growth Opportunity',
-  'Resort-Like Lifestyle',
-  'Investment Advantage',
+  'Dubai Style Luxury Living',
+  'Total 7 Towers | G+37 Floors',
+  '1700 - 2900 Sq.ft Sizes',
+  '100000 Sq.Ft Grand Clubhouse',
+  'Span 25 Acres Premium Development',
+  'World-Class Emaar Quality',
 ]
 
 export const highlightImages = [
@@ -26,60 +26,60 @@ export const highlightImages = [
 ]
 
 export const highlightCTA = [
-  'Explore the launch',
-  'Unlock connectivity',
-  'Browse our homes',
-  'See growth insights',
-  'Experience the lifestyle',
-  'Understand the advantage',
+  'Experience Dubai lifestyle',
+  'Explore tower details',
+  'View floor plans',
+  'Discover clubhouse',
+  'See master plan',
+  'Know about Emaar',
 ]
 
 export const amenityCTA = 'Exclusive with ownership'
 
 export const PROJECT_CONFIG = {
-  companyName: 'Ganga Realty',
-  partnerName: 'Ganga Realty',
-  projectName: 'Ganga Realty Sector 90',
-  location: 'Sector 90, Gurugram',
-  tagline: 'Where Luxury Meets Lifestyle',
+  companyName: 'Emaar Serenity Hills',
+  partnerName: 'Avyukta Realty',
+  projectName: 'Emaar Serenity Hills',
+  location: 'Sector 86, New Gurgaon',
+  tagline: 'Dubai Style Luxury Living in Gurgaon',
   description:
-    'Welcome to Ganga Realty\'s prestigious new address in Sector 90, Gurugram—where luxury, connectivity, and lifestyle come together in perfect harmony.',
+    'Emaar Sector 86 Gurgaon - Emaar Serenity Hills Sec 86 is a 25 acres premium project in Sector 86. Emaar Sec 86 offers Dubai style luxury living with 7 towers rising G+37 floors, featuring 2, 3, 4 BHK and 4 BHK + S residences. Emaar Serenity Hills Sector 86 Gurgaon combines world-class amenities with prime location connectivity.',
   seoDescription:
-    'Ganga Realty Sector 90 Luxury Apartments at Gurgaon is a new residential flats and Apartments with 2 BHK, 3 BHK, and 4 BHK residences. Book your home now with best deals.',
-  seoKeywords: 'buy apartments in Ganga Realty Sector 90 gurgaon, book apartments in Ganga Realty Sector 90 gurgaon, apartments in Ganga Realty Sector 90 gurgaon, Book Ganga Realty Sector 90 gurgaon, apartments in ganga realty Sector 90 gurgaon',
+    'Emaar Sector 86 Gurgaon - Emaar Serenity Hills Sec 86 offers 2, 3, 4 BHK luxury apartments starting 2.70 Cr. Emaar Sec 86 new launch with Dubai style living, 7 towers G+37 floors, 100000 Sq.Ft clubhouse on 25 acres. Book Emaar Serenity Hills Sector 86 Gurgaon now!',
+  seoKeywords: 'emaar sector 86, emaar sec 86, emaar serenity hills sec 86 gurgaon, emaar serenity hills sector 86 gurgaon, emaar sector 86 gurgaon, emaar sec 86 new launch, emaar 86 gurgaon apartments, emaar serenity hills sector 86, emaar sector 86 new project, emaar sec 86 gurgaon',
   highlights: [
-    'Following the remarkable success of Kashi by Ganga Realty, we proudly unveil our next landmark in Sector 90, Gurugram.',
-    'Strategically positioned with effortless access to Dwarka Expressway and NH-48',
-    'Premium 3 & 4 BHK homes crafted with contemporary design and features',
-    'Investment opportunity in rapidly developing New Gurugram',
-    'Resort-style amenities curated for premium living',
-    'Secure community with elevated wellbeing features',
+    'Emaar Sector 86 Gurgaon - Emaar Serenity Hills Sec 86 brings Dubai style luxury living to Sector 86 with iconic architecture and world-class amenities on 25 acres',
+    'Emaar Sec 86 location advantage - Just 4 minutes from Dwarka Expressway with seamless connectivity to NH-48, Golf Course Road, DLF Cyber City and IGI Airport',
+    'Emaar Serenity Hills Sector 86 Gurgaon offers premium 2, 3, 4 BHK and 4 BHK + S apartments ranging from 1700 to 2900 sq.ft with modern design and international specifications',
+    'Emaar Sector 86 investment opportunity - Prime location in New Gurgaon near upcoming Cyber City 2 and metro corridor with high appreciation potential',
+    'Emaar Sec 86 amenities - 100,000 sq.ft grand clubhouse with resort-style amenities including swimming pool, yoga center, boutique and conference rooms',
+    'Emaar Serenity Hills Sec 86 features 7 magnificent towers rising G+37 floors with 5-tier security, premium finishes and breathtaking city views',
   ],
   amenities: [
-    'Swimming Pool & Elegant Clubhouse',
-    'Well-equipped Gym & Rejuvenating Spa',
-    'Dedicated Children\'s Play Area',
-    '24/7 Security',
-    'Landscaped Gardens',
-    'Power Backup',
-    'Parking Facilities',
-    'Jogging Track',
+    'Swimming Pool & 100,000 Sq.Ft Grand Clubhouse',
+    'Yoga & Meditation Center',
+    'Landscaped Park & Gardens',
+    'Designer Boutique & Retail Space',
+    'Conference Room & Business Center',
+    'Children\'s Play Ground & Activity Area',
+    'Luxury Club & Lounge',
+    '5 Tier Security System with CCTV',
   ],
   landmarks: [
     {
       name: 'Dwarka Expressway',
       image: highlightImg2,
-      description: 'Fast-track access to Delhi and major destinations',
+      description: '4 mins away - Direct connectivity to Delhi and major hubs',
     },
     {
-      name: 'IMT Manesar',
+      name: 'Golf Course Road & DLF Cyber City',
       image: highlightImg4,
-      description: 'Thriving hub for industry and commerce',
+      description: 'Easy access to corporate offices, Cyber Hub & Ambience Mall',
     },
     {
-      name: 'RPS International School',
+      name: 'IGI Airport & Metro',
       image: highlightImg5,
-      description: 'Top-tier education for growing families',
+      description: '20 mins from Airport, upcoming metro station in proximity',
     },
   ],
   contact: {

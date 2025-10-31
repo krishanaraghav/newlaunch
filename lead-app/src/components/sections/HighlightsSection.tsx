@@ -9,7 +9,7 @@ const HighlightsSection = () => {
   return (
     <section id="highlights">
       <div className="section-heading">
-        <h2>Project Highlights</h2>
+        <h2>Emaar Sector 86 Highlights | Emaar Serenity Hills Sec 86 Gurgaon</h2>
         <a href="#contact">View brochure</a>
       </div>
       <div className="grid-cards">

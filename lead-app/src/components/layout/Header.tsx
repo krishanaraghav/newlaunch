@@ -5,9 +5,11 @@ type HeaderProps = {
   generalWhatsAppLink: string
   promoVisible: boolean
   onDismissPromo: () => void
+  isDarkMode: boolean
+  onToggleTheme: () => void
 }
 
-const Header = ({ generalWhatsAppLink, promoVisible, onDismissPromo }: HeaderProps) => (
+const Header = ({ generalWhatsAppLink, promoVisible, onDismissPromo, isDarkMode, onToggleTheme }: HeaderProps) => (
   <header>
     <div className="container">
       <div className="top-bar">
@@ -28,9 +30,19 @@ const Header = ({ generalWhatsAppLink, promoVisible, onDismissPromo }: HeaderPro
             </li>
           </ul>
         </nav>
-        <a href="#contact" className="cta secondary">
-          <i className="fas fa-user-plus" aria-hidden="true" /> Register Interest
-        </a>
+        <div className="header-actions">
+          <button 
+            className="theme-toggle" 
+            onClick={onToggleTheme}
+            aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+            title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+          >
+            <i className={`fas ${isDarkMode ? 'fa-sun' : 'fa-moon'}`} aria-hidden="true" />
+          </button>
+          <a href="#contact" className="cta secondary">
+            <i className="fas fa-user-plus" aria-hidden="true" /> Register Interest
+          </a>
+        </div>
       </div>
 
       <div className="hero">
@@ -57,7 +69,7 @@ const Header = ({ generalWhatsAppLink, promoVisible, onDismissPromo }: HeaderPro
             </div>
             <div className="meta-card">
               <span>Configurations</span>
-              <span>3 &amp; 4 BHK Residences</span>
+              <span>2, 3, 4 BHK &amp; 4 BHK + S</span>
             </div>
             <div className="meta-card">
               <span>Contact</span>
@@ -66,12 +78,18 @@ const Header = ({ generalWhatsAppLink, promoVisible, onDismissPromo }: HeaderPro
           </div>
         </div>
         <div className="hero-media">
-          <img
-            src={PROJECT_CONFIG.heroImage}
-            alt={`${PROJECT_CONFIG.projectName} visual`}
-            loading="lazy"
-            style={{ maxWidth: '100%', height: 'auto' }}
-          />
+          <div className="hero-image-wrapper">
+            <img
+              src={PROJECT_CONFIG.heroImage}
+              alt="Emaar Sector 86 | Emaar Serenity Hills Sector 86 Gurgaon | Emaar Sec 86 Luxury Apartments"
+              loading="eager"
+              className="hero-image"
+            />
+            <div className="hero-image-badge">
+              <i className="fas fa-building" aria-hidden="true" />
+              <span>Premium Living</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

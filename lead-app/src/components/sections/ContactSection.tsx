@@ -35,10 +35,9 @@ const ContactSection = ({
     </div>
     <div className="contact-content">
       <div className="contact-copy">
-        <h2>Ready to secure your address?</h2>
+        <h2>Book Emaar Sector 86 | Emaar Serenity Hills Sector 86 Gurgaon</h2>
         <p>
-          Connect with our dedicated relationship managers for pricing, inventory, and curated walkthroughs of
-          {PROJECT_CONFIG.projectName}.
+          Connect with our dedicated relationship managers for pricing, inventory, and curated walkthroughs of Emaar Sec 86 - {PROJECT_CONFIG.projectName} at Sector 86 Gurgaon.
         </p>
         <div className="trust-badges">
           <span>

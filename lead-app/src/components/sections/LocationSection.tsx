@@ -8,7 +8,7 @@ const LocationSection = () => {
   return (
     <section id="location">
       <div className="section-heading">
-        <h2>Location Advantage</h2>
+        <h2>Emaar Sector 86 Location | Emaar Sec 86 Gurgaon Connectivity</h2>
         <a href="#contact">Ask for directions</a>
       </div>
       <div className="grid-cards">
